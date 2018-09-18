@@ -4,12 +4,14 @@ defmodule Elvenhearth.Application do
   @moduledoc false
 
   use Application
+  import Supervisor.Spec
 
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
       # Starts a worker by calling: Elvenhearth.Worker.start_link(arg)
       # {Elvenhearth.Worker, arg},
+      worker(Elvenhearth.Repo, [])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
