@@ -11,5 +11,5 @@ A sandbox for learning Elixir and its environment
   * A --sup option can be given to generate an OTP application skeleton including a supervision tree. Normally an app is generated without a supervisor and without the app callback.
 
 # Step 3 - Create Phoenix Web Application
-1. mix phx.new elvenhearth_web --no-ecto
+1. mix phx.new elvenhearth_phx --no-ecto
   * The --no-ecto tells phoenix not to include the ecto wrapper or any of the files needed to interact with ecto.
