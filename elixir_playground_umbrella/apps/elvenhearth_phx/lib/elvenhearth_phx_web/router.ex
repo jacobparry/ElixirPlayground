@@ -14,7 +14,7 @@ defmodule ElvenhearthPhxWeb.Router do
   end
 
   scope "/" do
-    pipe_through :api # Use the default browser stack
+    pipe_through :api
 
     forward("/graphiql", Absinthe.Plug.GraphiQL,
       schema: ElvenhearthPhxWeb.Schema,
