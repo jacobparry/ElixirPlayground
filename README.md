@@ -36,6 +36,7 @@ A sandbox for learning Elixir and its environment
   * Make some queries
   * Run them in iex. iex -S mix
   * Changesets
+
   * Seeds
 
 # Step 5 - Absinthe Boilerplate
@@ -59,3 +60,8 @@ A sandbox for learning Elixir and its environment
         )
       end
  * Create a schema.ex file (in web app)
+ * List of users
+    user object in schema
+    list of users
+    list_user_method
+    not null fields
