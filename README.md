@@ -13,3 +13,13 @@ A sandbox for learning Elixir and its environment
 # Step 3 - Create Phoenix Web Application
 1. mix phx.new elvenhearth_phx --no-ecto
   * The --no-ecto tells phoenix not to include the ecto wrapper or any of the files needed to interact with ecto.
+
+# Step 4 - Add Ecto and Postgres
+  * Add the ecto and postrex dependecies from hex.pm to logic app.
+  * Add config blocks in config.exs
+  * Add the repo file.
+  * Add child worker for the repo.
+  * run mix ecto.create
+  * Open database (psql -d <db>)
+
+
