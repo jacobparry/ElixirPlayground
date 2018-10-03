@@ -29,6 +29,8 @@ A sandbox for learning Elixir and its environment
 # Step 4 - Create Ecto Models
   * Model
   * Create User model
+  ** use Ecto.schema
+  ** schema "users" do
   * Create user migration
   * mix ecto.gen.migration add_users_table from logic app
   * Run migration
@@ -65,3 +67,8 @@ A sandbox for learning Elixir and its environment
     list of users
     list_user_method
     not null fields
+
+# Step 6 - Resolvers
+  * Create User and Character Resolvers
+  ** Talk about the /3 arity (first field is root object)
+  * Abstract the objects and fields

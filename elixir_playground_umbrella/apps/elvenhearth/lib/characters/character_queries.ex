@@ -1,13 +1,18 @@
 defmodule Elvenhearth.Characters.CharacterQueries do
   import Ecto.Query
 
+  alias Elvenhearth.Users.User
+
   alias Elvenhearth.Repo
   alias Elvenhearth.Characters.Character
 
-  def get_all_for_user(user) do
+  def get_all_for_user(%User{} = user) do
+    get_all_for_user(user.id)
+  end
+  def get_all_for_user(user_id) when is_integer(user_id) do
     Repo.all(
       from c in Character,
-      where: c.user_id == ^user.id
+      where: c.user_id == ^user_id
     )
   end
 

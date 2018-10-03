@@ -30,6 +30,7 @@ unless(UserQueries.any) do
 
   Enum.map(inserted_users, fn(inserted_user) ->
     {:ok, user} = inserted_user
+    IO.inspect(user)
     Character.changeset(%Character{}, %{
       name: "Rand",
       race: "Human",

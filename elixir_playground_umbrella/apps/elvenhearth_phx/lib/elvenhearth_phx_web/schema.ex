@@ -1,6 +1,8 @@
 defmodule ElvenhearthPhxWeb.Schema do
   use Absinthe.Schema
 
+  import_types ElvenhearthPhxWeb.Schema.SchemaTypes
+
   query do
     field :health, :string do
       resolve(fn _, _, _ ->
@@ -8,32 +10,9 @@ defmodule ElvenhearthPhxWeb.Schema do
       end)
     end
 
-    field :users, list_of(:user) do
-      resolve &list_users/3
-    end
-
+    import_fields :schema_queries
   end
 
-  object :user do
-    field :username, :string
-    field :password, :string
-    field :email, non_null(:string)
-  end
-
-  @users [
-    %{
-      username: "Rand",
-      password: "1234",
-      email: "something@something"
-    },
-    %{
-      username: "Perrin",
-      password: "5678"
-    }
-  ]
 
 
-  def list_users(_, _, _) do
-    {:ok, @users}
-  end
 end
