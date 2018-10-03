@@ -18,8 +18,12 @@ A sandbox for learning Elixir and its environment
   * Add the ecto and postrex dependecies from hex.pm to logic app.
   * Add config blocks in config.exs
   * Add the repo file.
+  ** use Ecto.Repo, otp_app: :elvenhearth
+  * Add postgrex and ect0 to elvenhearth mix.exs applications
   * Add child worker for the repo.
-  * run mix ecto.create
+  ** worker(Elvenhearth.Repo, [])
+  * run mix ecto
+  ** mix ecto.create
   * Open database (psql -d <db>), \dt
 
 # Step 4 - Create Ecto Models
@@ -34,3 +38,24 @@ A sandbox for learning Elixir and its environment
   * Changesets
   * Seeds
 
+# Step 5 - Absinthe Boilerplate
+ * Add the dependencies to the web application
+      {:absinthe, "~> 1.4"},
+      {:absinthe_plug, "~> 1.4"},
+      {:absinthe_phoenix, "~> 1.4"},
+      {:absinthe_relay, "~> 1.4"},
+ * Add supervisor to Web Application
+      supervisor(Absinthe.Subscription, [ElvenhearthPhxWeb.Endpoint])
+ * Add reference to user_socket
+    use Absinthe.Phoenix.Socket,
+    schema: ElvenhearthPhxWeb.Schema
+ * Add route in the router.ex
+      scope "/" do
+        pipe_through :api
+
+        forward("/graphiql", Absinthe.Plug.GraphiQL,
+          schema: ElvenhearthPhxWeb.Schema,
+          interface: :playground
+        )
+      end
+ * Create a schema.ex file (in web app)

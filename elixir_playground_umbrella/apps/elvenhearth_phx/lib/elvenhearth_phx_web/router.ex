@@ -13,10 +13,13 @@ defmodule ElvenhearthPhxWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", ElvenhearthPhxWeb do
-    pipe_through :browser # Use the default browser stack
+  scope "/" do
+    pipe_through :api
 
-    get "/", PageController, :index
+    forward("/graphiql", Absinthe.Plug.GraphiQL,
+      schema: ElvenhearthPhxWeb.Schema,
+      interface: :playground
+    )
   end
 
   # Other scopes may use custom stacks.

@@ -4,9 +4,9 @@ defmodule Elvenhearth.Application do
   @moduledoc false
 
   use Application
-  import Supervisor.Spec
 
   def start(_type, _args) do
+    import Supervisor.Spec
     # List all child processes to be supervised
     children = [
       # Starts a worker by calling: Elvenhearth.Worker.start_link(arg)
