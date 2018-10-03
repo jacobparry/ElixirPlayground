@@ -20,6 +20,17 @@ A sandbox for learning Elixir and its environment
   * Add the repo file.
   * Add child worker for the repo.
   * run mix ecto.create
-  * Open database (psql -d <db>)
+  * Open database (psql -d <db>), \dt
 
+# Step 4 - Create Ecto Models
+  * Model
+  * Create User model
+  * Create user migration
+  * mix ecto.gen.migration add_users_table from logic app
+  * Run migration
+  * Migration table in psql
+  * Make some queries
+  * Run them in iex. iex -S mix
+  * Changesets
+  * Seeds
 

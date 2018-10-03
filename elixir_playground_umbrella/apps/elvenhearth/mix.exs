@@ -11,7 +11,8 @@ defmodule Elvenhearth.MixProject do
       lockfile: "../../mix.lock",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      aliases: aliases
     ]
   end
 
@@ -31,6 +32,12 @@ defmodule Elvenhearth.MixProject do
       # {:sibling_app_in_umbrella, in_umbrella: true},
       {:ecto, "~> 2.2"},
       {:postgrex, "~> 0.13.5"}
+    ]
+  end
+
+  defp aliases do
+    [
+      "init": ["ecto.create", "ecto.migrate", "run priv/repo/seed.exs"]
     ]
   end
 end

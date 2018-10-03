@@ -1,0 +1,10 @@
+{application,elvenhearth,
+             [{applications,[kernel,stdlib,elixir,logger,postgrex,ecto]},
+              {description,"elvenhearth"},
+              {modules,['Elixir.Elvenhearth','Elixir.Elvenhearth.Application',
+                        'Elixir.Elvenhearth.Repo',
+                        'Elixir.Elvenhearth.Users.UserQueries',
+                        'Elixir.Elvenhearth.Users.Users']},
+              {registered,[]},
+              {vsn,"0.1.0"},
+              {mod,{'Elixir.Elvenhearth.Application',[]}}]}.
